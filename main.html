@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="rus">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="style.css" rel="stylesheet" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div class="main inline"></div>
+			Размер клеток
+			<input type="range" min="10" max="70" value="25" step="5" id="changer" />
+		</header>
+		<div class="main inline">
+			<div class="left-block">
+				<p>Добавить элемент</p>
+				<div class="wrapper-elements">
+					<ul>
+						<li>Кнопка</li>
+						<li>Изображение</li>
+						<li>Изображение</li>
+						<li>Изображение</li>
+						<li>Изображение</li>
+						<li>Изображение</li>
+					</ul>
+				</div>
+			</div>
+			<div class="content" id="cell">тут должен быть генерируемый js текст</div>
+			<div class="right-block">
+				<p>Свойства элемента</p>
+				<div class="wrapper-elements">
+					<ul>
+						<li>Размер</li>
+						<li>Цвет</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="editor.js"></script>
+</html>
