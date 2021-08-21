@@ -1,86 +1,94 @@
 html,
 body {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #107eff;
 }
-
-header {
-	height: 3vh;
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
-
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
-
+header {
+  height: 4vh;
+  background: #d2deed;
+  border: 1px solid black;
+}
 .main {
-	margin: 0 auto; /* Центрируем блоки */
-	width: 100%; /* Задаем ширину 100%, чтобы сделать ее резиновой */
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 96vh;
 }
-
-.inline div {
-	display: inline-block; /* Делаем блоки по горизонтали */
-	display: -moz-inline-stack; /* Для FireFox 2, тот же самый, что и inline-block */
-	vertical-align: top; /* Выравниваем их сверху */
-	font-size: 16px; /* Ставим дочкам размер шрифта, иначе примет значение родителя */
-	/* Для IE 6 и IE 7, чтобы блоки были по горизонтали
-        zoom: 1;
-        *display: inline;
-        */
+.main > * {
+  height: 96vh;
 }
-
-div.inline {
-	font-size: 0;
-} /* Ставим родителю значение 0, чтобы убрать отступы у блоков*/
-
 .left-block {
-	position: absolute;
-	vertical-align: middle;
-	background: #16d9a6;
-	width: 20vw; /*Задаем ширину в процентах чтобы сделать ее резиновой*/
-	height: 97vh; /* Высота блока */
-	margin-right: 20px;
-	left: 0;
+  width: 100px;
+  position: relative;
+  background: #d2deed;
 }
-
-.content {
-	background: white;
-	width: 60%;
-	height: 97vh;
-}
-
 .right-block {
-	position: absolute;
-	vertical-align: middle;
-	background: #16d9a6;
-	width: 20vw;
-	height: 97vh;
-	margin-left: 20px;
-	right: 0;
+  padding: 16px;
+  width: 450px;
+  background-color: #e8eff6;
 }
-
+.panel {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.panel:hover {
+  background-color: #e8eff6;
+}
+.panel img {
+  width: 25px;
+  height: 25px;
+}
+#elements {
+  width: 450px;
+  height: 96vh;
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  z-index: 1;
+  background-color: #e8eff6;
+}
+#elements li {
+  padding: 16px;
+  margin: 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
 #cell {
-	display: inline-block;
-	background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px),
-		linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
-	background-size: 25px 25px;
-	background-position: center center;
-	vertical-align: middle;
-	width: 50vw;
-	height: 80vh;
-	position: absolute;
-	top: 50%;
-	left: 50vw;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	border: 1px solid black;
+  width: 43.8%;
+  border: 1px solid black;
+  position: relative;
+  background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
+  background-size: 25px 25px;
 }
-
+#slider-grid-size {
+  padding: 4px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: #e8eff6;
+}
 .wrapper-elements {
-	position: absolute;
-	margin: 10px 30px 10px 20px;
-	width: 8vw;
-	padding: 0px 30px 0px 0px;
-	background-color: white;
-	border-radius: 5px;
+  display: inline-block;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: white;
 }
