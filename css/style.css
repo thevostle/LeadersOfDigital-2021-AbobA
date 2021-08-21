@@ -30,30 +30,46 @@ body {
 ul {
   list-style-type: none;
 }
-header {
-  height: 4vh;
-  background: #d2deed;
-}
 #main {
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
-  height: 96vh;
+  height: 100vh;
   position: relative;
 }
 #main > * {
-  height: 96vh;
+  height: 100vh;
+}
+#device-selector {
+  width: 220px;
+  height: 64px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 16px;
+  position: fixed;
+  left: 1050px;
+  top: 31px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#device-selector img {
+  height: 40px;
+  margin: 16px;
 }
 #toolbar {
   width: 100px;
-  position: relative;
   margin-right: 40px;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   background: #d2deed;
 }
 #elements,
 #templates {
-  height: 96vh;
+  height: 100vh;
   top: 0px;
   left: 100px;
   z-index: 1;
@@ -86,7 +102,6 @@ header {
   position: relative;
   cursor: pointer;
   background: #F1F5FA;
-  filter: drop-shadow(0px 2px 40px rgba(0, 0, 0, 0.25));
 }
 #elements > li::after {
   display: block;
@@ -96,6 +111,7 @@ header {
   position: absolute;
   top: 9px;
   right: 4px;
+  transform: rotate(-90deg);
   background: #ffffff;
   background-image: url(../icons/arrow.png);
   background-repeat: no-repeat;
@@ -103,7 +119,11 @@ header {
   background-size: 15px 11px;
   content: "";
 }
+#elements > li.clicked:after {
+  transform: rotate(0deg);
+}
 #elements li ul {
+  display: none;
   margin-top: 32px;
   border-radius: 0 0 4px 4px;
 }
@@ -128,7 +148,8 @@ header {
   background: rgba(232, 239, 246, 0.99);
   display: none;
 }
-.panel {
+.panel,
+.save-cont {
   width: 100px;
   height: 100px;
   display: flex;
@@ -138,19 +159,22 @@ header {
   cursor: pointer;
   background: rgba(232, 239, 246, 0.01);
 }
-.panel:hover {
+.panel:hover,
+.save-cont:hover {
   background: rgba(232, 239, 246, 0.99) !important;
 }
-.panel img {
+.panel img,
+.save-cont img {
   width: 25px;
   height: 25px;
 }
-.panel + ul:hover {
+.panel + ul:hover,
+.save-cont + ul:hover {
   background: rgba(232, 239, 246, 0.99);
 }
 #cell {
-  width: 85vw;
-  height: 85vh;
+  width: 80vw;
+  height: 80vh;
   border: 1px solid black;
   position: relative;
   background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
@@ -162,4 +186,37 @@ header {
   padding: 16px;
   border-radius: 4px;
   background: white;
+}
+.btn,
+.fnbtn,
+.icbtn {
+  border-radius: 8px;
+  background-color: salmon;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+  color: balck;
+}
+.btn:hover,
+.fnbtn:hover,
+.icbtn:hover,
+.btn:focus,
+.fnbtn:focus,
+.icbtn:focus,
+.btn:active,
+.fnbtn:active,
+.icbtn:active {
+  outline: none;
+  border: none;
+  background-color: salmon;
+}
+.btn {
+  width: 100px;
+  height: 40px;
+}
+.fnbtn {
+  width: 40px;
+  height: 40px;
 }

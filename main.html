@@ -9,9 +9,16 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<header></header>
 		<div id="main">
+
+			<div id="device-selector">
+				<img src="icons/smartphone.png" />
+				<img src="icons/tablet.png" />
+				<img src="icons/desktop.png" />
+			</div>
+
 			<div id="toolbar">
+			<div>
 				<div class="panel">
 					<img src="icons/templates.png" />
 					Шаблоны
@@ -29,33 +36,56 @@
 					</div>
 				</div>
 
-				<div class="device">
-					<img src="icons/smartphone.png" />
-					<img src="icons/tablet.png" />
-					<img src="icons/desktop.png" />
-				</div>
-
 				<div class="panel">
 					<img src="icons/elements.png" />
 					Элементы
 				</div>
 				<ul id="elements">
 					<li>Кнопки
-						<ul>
-							<li>Button</li>
-							<li>Function button</li>
-							<li>Icon button</li>
+						<ul id="buttons">
+							<li item="btn">Button</li>
+							<li item="fnbtn">Function button</li>
+							<li item="icbtn">Icon button</li>
 						</ul>
 					</li>
-					<li>Инпуты</li>
-					<li>Мультиселект</li>
-					<li>Чекбокс</li>
-					<li>Радио-кнопка</li>
+					<li>Инпуты
+						<ul id="inputs">
+							<li item="inputamount">Amount</li>
+							<li item="inputdate">Date</li>
+							<li item="inputmail">Mail</li>
+							<li item="inputnumber">Number</li>
+							<li item="inputphone">Phone</li>
+							<li item="inputtext">Text</li>
+						</ul>
+					</li>
+					<li>Мультиселект
+						<ul id="multiselects">
+							<li item="multiselect">Multiselect</li>
+						</ul>
+					</li>
+					<li>Чекбокс
+						<ul id="checkboxes">
+							<li item="singlecheckbox">Checkbox</li>
+							<li item="groupcheckbox">Checkbox group</li>
+						</ul>
+					</li>
+					<li>Радио-кнопка
+						<ul id="radios">
+							<li item="singleradio">Checkbox</li>
+							<li item="groupradio">Checkbox group</li>
+						</ul>
+					</li>
 					<li>Свитч</li>
 					<li>Табы</li>
 					<li>Типографские стили</li>
 					<li>Иконки</li>
 				</ul>
+			</div>
+
+				<div class="save-cont">
+					<img src="icons/file_save.png" />
+					Сохранить
+				</div>
 			</div>
 
 			<div class="content" id="cell">

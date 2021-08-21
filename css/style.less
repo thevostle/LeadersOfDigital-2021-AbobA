@@ -1,4 +1,4 @@
-@mainheight: 96vh;
+@mainheight: 100vh;
 @toolbarcolor: #d2deed;
 @menucolor: rgba(232, 239, 246, 0.99);
 
@@ -35,12 +35,6 @@ ul {
 	list-style-type: none;
 }
 
-header {
-	height: 4vh;
-	background: @toolbarcolor;
-}
-
-
 #main {
 	display: flex;
 	flex-flow: row;
@@ -56,13 +50,35 @@ header {
 	}
 }
 
+#device-selector {
+	width: 220px;
+    height: 64px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #000000;
+    border-radius: 16px;
+    position: fixed;
+    left: 1050px;
+    top: 31px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+	img {	
+		height: 40px;
+		margin: 16px;
+	}
+}
+
 #toolbar {
 	width: 100px;
-	position: relative;
-
 	margin-right: 40px;
+    position: relative;
 
-	background: @toolbarcolor;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    background: #d2deed;
 }
 
 #elements, #templates {
@@ -111,8 +127,6 @@ header {
 		cursor: pointer;
 		background: #F1F5FA;
 
-		filter: drop-shadow(0px 2px 40px rgba(0, 0, 0, 0.25));
-
 		&::after {
 			display: block;
 			width: 32px;
@@ -122,7 +136,9 @@ header {
 			position: absolute;
 			top: 9px;
 			right: 4px;
-
+			
+			transform: rotate(-90deg);
+			
 			background: #ffffff;
 			background-image: url(../icons/arrow.png);
 			background-repeat: no-repeat;
@@ -130,9 +146,15 @@ header {
 			background-size: 15px 11px;
 			content: "";
 		}
+
+		&.clicked:after {
+			transform: rotate(0deg);
+		}
 	}
 	
 	li ul {
+		display: none;
+
 		margin-top: 32px;
 		border-radius: 0 0 4px 4px;
 	}
@@ -164,7 +186,7 @@ header {
 	display: none;
 }
 
-.panel {
+.panel, .save-cont {
 	width: 100px;
 	height: 100px;
 
@@ -191,8 +213,8 @@ header {
 }
 
 #cell {
-	width: 85vw;
-	height: 85vh;
+	width: 80vw;
+	height: 80vh;
 	border: 1px solid black;
 	position: relative;
 
@@ -208,4 +230,36 @@ header {
 	border-radius: 4px;
 
 	background: white;
+}
+
+
+.btn,
+.fnbtn,
+.icbtn {
+	border-radius: 8px;
+	background-color: salmon;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	position: fixed;
+	z-index: 2;
+
+	&:hover, &:focus, &:active {
+		outline: none;
+		border: none;
+		background-color: salmon;
+	}
+
+	color: balck;
+}
+
+.btn {
+	width: 100px;
+	height: 40px;
+}
+
+.fnbtn {
+	width: 40px;
+	height: 40px;
 }

@@ -1,23 +1,30 @@
-let generated = ""; // html-код макета
-let elements = [];
+var c = 0;
 
-element = {
-	type: "",
-	coords: [],
-	size: 0,
-	settings: [],
-};
+const buttons = Array.from(document.getElementById("buttons").children);
+const canvas = document.getElementById("cell");
 
-// добавляет в строку generated данные об одном элементе
-function addElementToText(element) {
-	generated = generated + "<" + element["type"] + ">";
-	// добавляем атрибуты
-	// for (i in element.settings) generated += "${i.name}=\'${i.data}\'"
-	generated = generated + "</" + element["type"] + ">";
+function spawn (element) {
+	const itemClass = element.getAttribute("item");
+    cell.innerHTML += generateBlock(itemClass, c);
+    var movingelement = document.getElementsByClassName(itemClass + c.toString())[0];
+    movingelement.style.left = 540 + 'px';
+    movingelement.style.top = event.clientY - 20 + 'px';
+
+    movingelement.addEventListener("mousemove", move.bind(null, movingelement), false);
+    movingelement.addEventListener("mouseup", function() {movingelement.outerHTML = movingelement.outerHTML}, false);
+    c++;
 }
 
-// генерирует полный html-код макета
-function generateHtml() {
-	for (i of elements) addElementToText(i);
+function generateBlock(itemClass, c) {
+	return "<input value='Button' type='button' class='" + itemClass + " " + itemClass + c.toString() + "' />";
 }
 
+function move (element) {
+    element.style.position = "fixed";
+    element.style.left = event.clientX - element.clientWidth / 2 + 'px';
+    element.style.top = event.clientY - element.clientHeight / 2 + 'px';
+}
+
+buttons.forEach ((element, i, buttons) => {
+	element.addEventListener("mousedown", spawn.bind(null, element));
+});
