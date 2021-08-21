@@ -8,26 +8,44 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<header>
-			<div class="main inline"></div>
-			Размер клеток
-			<input type="range" min="10" max="70" value="25" step="5" id="changer" />
-		</header>
-		<div class="main inline">
+		<header></header>
+		<div class="main">
 			<div class="left-block">
-				<p>Добавить элемент</p>
-				<div class="wrapper-elements">
-					<ul>
-						<li>Кнопка</li>
-						<li>Изображение</li>
-						<li>Изображение</li>
-						<li>Изображение</li>
-						<li>Изображение</li>
-						<li>Изображение</li>
-					</ul>
+				<div class="panel">
+					<img src="img/bobibi.PNG" />
+					Шаблоны
+				</div>
+				<div class="panel">
+					<img src="img/aboba.PNG" />
+					Элементы
+				</div>
+				<ul id="elements">
+					<li>Кнопки</li>
+					<li>Инпуты</li>
+					<li>Мультиселект</li>
+					<li>Чекбокс</li>
+					<li>Радио-кнопка</li>
+					<li>Свитч</li>
+					<li>Табы</li>
+					<li>Типографские стили</li>
+					<li>Иконки</li>
+				</ul>
+			</div>
+
+			<div class="content" id="cell">
+				<div id="slider-grid-size">
+					Размер клеток
+					<input
+						type="range"
+						min="25"
+						max="85"
+						value="25"
+						step="5"
+						id="changer"
+					/>
 				</div>
 			</div>
-			<div class="content" id="cell">тут должен быть генерируемый js текст</div>
+
 			<div class="right-block">
 				<p>Свойства элемента</p>
 				<div class="wrapper-elements">
@@ -38,6 +56,7 @@
 				</div>
 			</div>
 		</div>
+		<footer></footer>
 	</body>
 	<script src="editor.js"></script>
 </html>
