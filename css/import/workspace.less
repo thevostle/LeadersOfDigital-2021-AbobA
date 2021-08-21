@@ -1,0 +1,72 @@
+// out: false, main: ../style.less
+#workspace {
+	width: 80vw;
+	display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#content {
+	width: 80vw;
+	height: 80vh;
+	border: 1px solid black;
+	position: relative;
+
+	background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px),
+		linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
+	background-size: 25px 25px;
+}
+
+#device-selector {
+	width: 300px;
+    height: 64px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: space-evenly;
+	align-items: center;
+
+	background-color: @primarycolor;
+    box-shadow: 0 0 10px #000;
+
+	img {	
+		height: 40px;
+		cursor: pointer;
+
+		&:hover {
+			background-color: @secondarycolor;
+		}
+	}
+}
+
+#grid-selector {
+
+	width: 300px;
+
+	input {
+		display: none;
+	}
+
+	div {
+		display: none;
+		justify-content: space-evenly;
+	}
+
+	#desktop {
+		display: flex;
+	}
+
+	label {
+		width: 75px;
+		border-radius: 8px;
+
+		text-align: center;
+		background-color: @primarycolor;
+		cursor: pointer;
+
+		&:hover {
+			background-color: @secondarycolor;
+		}
+	}
+}

@@ -1,52 +1,54 @@
 const elementsPanels = Array.from(document.getElementsByClassName("panel"));
 const elementsTypes = document.querySelectorAll("#elements > li");
 const panelProperties = document.getElementById("props");
+const tabsSelector = Array.from(document.getElementById("device-selector").getElementsByTagName("img"));
 
-function movebg () {
-	document.getElementById("cell").style.backgroundSize =
-		ranger.value.toString() + "px " + ranger.value.toString() + "px";
-}
+//const tabsGroup = Array.from(document.querySelectorAll("#grid-selector div label"));
+//Уже определено в editor
 
-function Show (element) {
-	element.style.display = "block";
+
+function Show (element, prop="block") {
+	element.style.display = prop;
 }
 
 function Hide (element) {
 	element.style.display = "none";
 }
 
-function switchDisplay (element) {
-	if (element.style.display == "none" || element.style.display == "") {
-		Show(element);
-	} else {
-		Hide(element);
-	}
-}
-
-function switchBgColor (element, ActiveColor, InactiveColor) {
-	if (element.style.backgroundColor == ActiveColor) {
-		element.style.backgroundColor == InactiveColor;
-	}
-}
-
-function setBgColor (element, color) {
-	element.style.backgroundColor = color;
-}
-
-function showPanel (panels, currentElement) {
-	isVisible = currentElement.nextElementSibling.style.display == "block";
+function togglePanel (panels, currentElement) {
+	const panel = currentElement.nextElementSibling;
+	isVisible = panel.style.display == "block";
 
 	panels.forEach(element => {
-		setBgColor(element, "rgba(232, 239, 246, 0)");
+		element.classList.remove("active");
 		Hide(element.nextElementSibling);
 	});
 
-	Show(currentElement.nextElementSibling);
-	setBgColor(currentElement, "rgb(232, 239, 246)");
+	Show(panel);
+	currentElement.classList.add("active");
 
 	if (isVisible) {
-		Hide(currentElement.nextElementSibling);
-		setBgColor(currentElement, "rgba(232, 239, 246, 0)");
+		Hide(panel);
+		currentElement.classList.remove("active");
+	}
+}
+
+function toggleTab(tabs, currentElement) {
+	const tab = document.getElementById(currentElement.getAttribute("alt"));
+	currentElement.classList.add("active");
+	isVisible = tab.style.display == "block";
+
+	tabs.forEach(element => {
+		element.classList.remove("active");
+		Hide(document.getElementById(element.getAttribute("alt")));
+	});
+
+	Show(tab, "flex");
+	currentElement.classList.add("active");
+
+	if (isVisible) {
+		Hide(tab);
+		currentElement.classList.remove("active");
 	}
 }
 
@@ -63,13 +65,33 @@ function showType (type, element) {
 	}
 }
 
+function toggleResolution(tabs, currentElement) {
+	isActive = currentElement.classList[0] == "active";
+
+	tabs.forEach(element => {
+		element.classList.remove("active");
+	});
+
+	currentElement.classList.add("active");
+
+	if (isActive) {
+		currentElement.classList.remove("active");
+	}
+}
 
 
 elementsPanels.forEach ((element, i, panels) => {
-	element.addEventListener("click", showPanel.bind(null, panels, element));
+	element.addEventListener("click", togglePanel.bind(null, panels, element));
 });
 
-
 elementsTypes.forEach ((element, i, type) => {
-	element.addEventListener("dblclick", showType.bind(null, type, element));
+	element.addEventListener("mouseup", showType.bind(null, type, element));
+});
+
+tabsSelector.forEach ((element, i, tabs) => {
+	element.addEventListener("click", toggleTab.bind(null, tabs, element));
+});
+
+tabsGroup.forEach ((element, i, tabs) => {
+	element.addEventListener("click", toggleResolution.bind(null, tabs, element));
 });

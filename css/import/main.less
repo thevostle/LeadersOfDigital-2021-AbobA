@@ -1,0 +1,46 @@
+// out: false, main: ../style.less
+@mainheight: 100vh;
+@primarycolor: #d2deed;
+@secondarycolor: rgb(232, 239, 246);
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import '@design-system-rt/rtk-fonts';
+
+@font-face {
+	font-family: 'RostelecomBasis';
+	font-style: normal;
+  	font-weight: 400;
+  	font-display: swap;
+	src: url("../node_modules/rtk-fonts/fonts/RostelecomBasis-Bold.ttf") format("opentype");
+  }
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	font-family: 'RostelecomBasis';
+	/*font-family: 'Lato', sans-serif;*/
+
+	color: #107eff;
+}
+
+* {
+	box-sizing: border-box;
+	user-select: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.inactive {
+	background-color: @primarycolor !important;
+}
+
+.active {
+	background-color: @secondarycolor !important;
+}

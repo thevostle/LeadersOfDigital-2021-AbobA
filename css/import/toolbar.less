@@ -1,0 +1,139 @@
+// out: false, main: ../style.less
+#toolbar {
+	width: 100px;
+	margin-right: 40px;
+    position: relative;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    background: @primarycolor;
+}
+
+#elements, #templates {
+    display: none;
+    width: 450px;
+    height: @mainheight;
+
+	position: absolute;
+    top: 0px;
+	left: 100px;
+
+	background: @secondarycolor;
+	z-index: 1;
+}
+
+#templates {
+	#templates-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+
+		padding: 16px;
+	}
+	
+	img {
+		width: 169px;
+		height: 100px;
+
+		margin: 20px;
+	}
+
+	input {
+        width: 370px;
+		height: 50px;
+
+        margin: 40px 20px 0px 40px;
+		padding-left: 50px;
+
+		border-radius: 5px;
+		border:none;
+		
+        color: grey;
+	}
+}
+
+#elements {
+	& > li {
+		padding: 16px;
+		margin: 16px;
+		border-radius: 4px;
+
+		position: relative;
+
+		cursor: pointer;
+		background: #F1F5FA;
+
+		&::after {
+			display: block;
+			width: 32px;
+			height: 32px;
+			border-radius: 16px;
+
+			position: absolute;
+			top: 9px;
+			right: 4px;
+			
+			transform: rotate(-90deg);
+			
+			background: #ffffff;
+			background-image: url(../icons/arrow.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 15px 11px;
+			content: "";
+		}
+
+		&.clicked:after {
+			transform: rotate(0deg);
+		}
+	}
+	
+	li ul {
+		display: none;
+
+		margin-top: 32px;
+		border-radius: 0 0 4px 4px;
+
+        li {
+            padding: 16px;
+		    padding-left: 32px;
+		    margin: -16px;
+		    border-radius: 0 0 4px 4px;
+		
+		    color: #405F84;
+		    background: rgb(255, 255, 255);
+        }
+	}
+}
+
+.panel {
+	width: 100px;
+	height: 100px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+	background: rgba(232, 239, 246, 0.01);
+
+	&:hover {
+		background: @secondarycolor !important;
+	}
+
+	img {
+		width: 25px;
+		height: 25px;
+	}
+
+	& + ul:hover {
+		background: @secondarycolor;
+	}
+}
+
+.save-cont {
+	.panel();
+}
