@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="rus">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/fonts.css" rel="stylesheet" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="main">
+			<div id="toolbar">
+			<div>
+				<div class="panel">
+					<img src="icons/templates.png" />
+					Шаблоны
+				</div>
+				<div id="templates">
+					<input type="search" placeholder="Поиск шаблонов"/>
+					<br>
+					<div id="templates-container">
+						<img src="images/aboba.PNG">
+						<img src="images/aboba.PNG">
+						<img src="images/aboba.PNG">
+						<img src="images/aboba.PNG">
+						<img src="images/aboba.PNG">
+						<img src="images/aboba.PNG">
+					</div>
+				</div>
+
+				<div class="panel">
+					<img src="icons/elements.png" />
+					Элементы
+				</div>
+				<ul id="elements">
+					<li>Кнопки
+						<ul id="buttons">
+							<li item="btn">Button</li>
+							<li item="fnbtn">Function button</li>
+							<li item="icbtn">Icon button</li>
+						</ul>
+					</li>
+					<li>Инпуты
+						<ul id="inputs">
+							<li item="inputamount">Amount</li>
+							<li item="inputdate">Date</li>
+							<li item="inputmail">Mail</li>
+							<li item="inputnumber">Number</li>
+							<li item="inputphone">Phone</li>
+							<li item="inputtext">Text</li>
+						</ul>
+					</li>
+					<li>Мультиселект
+						<ul id="multiselects">
+							<li item="multiselect">Multiselect</li>
+						</ul>
+					</li>
+					<li>Чекбокс
+						<ul id="checkboxes">
+							<li item="singlecheckbox">Checkbox</li>
+							<li item="groupcheckbox">Checkbox group</li>
+						</ul>
+					</li>
+					<li>Радио кнопка
+						<ul id="radios">
+							<li item="singleradio">Radio button</li>
+						</ul>
+					</li>
+					<li>Свитч
+						<ul id="switch">
+							<li item="switch">Switch</li>
+						</ul>
+					</li>
+					<li>Табы
+						<ul id="tabs">
+							<li item="tabsclassic">Tabs</li>
+						</ul>
+					</li>
+					<li>Типографские стили
+						<ul id="typography">
+							<li item="typography">Typography</li>
+						</ul>
+					</li>
+					<li>Иконки
+						<ul id="icons">
+							<li item="iconsresizable">Resizable</li>
+							<li item="iconsstatic">Static 16px</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+				<div class="save-cont">
+					<img src="icons/file_save.png" />
+					Сохранить
+				</div>
+			</div>
+
+			<div id="workspace">
+				<div id="device-selector">
+					<img src="icons/desktop.png" alt="desktop" class="active" />
+					<img src="icons/tablet.png" alt="tablet" class="" />
+					<img src="icons/smartphone.png" alt="mobile" class="" >
+				</div>
+
+				<div id="grid-selector">
+					<div id="mobile">
+						<input type="radio" name="grid" id="ms320">
+						<label for="ms320">Mobile small 320px</label>
+						<input type="radio" name="grid" id="ml375">
+						<label for="ml375">Mobile large 375px</label>
+					</div>
+
+					<div id="tablet">
+						<input type="radio" name="grid" id="tsv640">
+						<label for="tsv640">Tablet vertical 640px</label>
+						<input type="radio" name="grid" id="tv768">
+						<label for="tv768">Tablet vertical 768px</label>
+						<input type="radio" name="grid" id="th1024">
+						<label for="th1024">Tablet horizontal 1024px</label>
+					</div>
+
+					<div id="desktop">
+						<input type="radio" name="grid" id="ds1440">
+						<label for="ds1440">Desktop small 1440px</label>
+						<input type="radio" name="grid" id="dm1512">
+						<label for="dm1512">Desktop middle 1512px</label>
+						<input type="radio" name="grid" id="dl1920" checked="checked">
+						<label for="dl1920">Desktop large 1920px</label>
+					</div>
+				</div>
+
+				<div id="content">
+
+				</div>
+			</div>
+
+			<div id="props">
+				<p>Элемент</p>
+
+				<div class="view">
+					<p>Вид элемента</p>
+				</div>
+
+				<div class="color">
+
+					<div class="heading">
+						Цвет
+					</div>
+
+					<div class="circlesbox">
+
+					<div class="circlecolorred"></div>
+					<div class="circlecolorgreen"></div>
+					<div class="circlecolorblue"></div>
+					<div class="circlecolorpurple"></div>
+
+				</div>
+
+				</div>
+
+				<div class="size">
+
+					<div class="heading">
+						Размер
+					</div>
+
+					<div class="smallsize">
+						<li>маленький</li>
+					</div>
+
+					<div class="middlesize">
+						<li>средний</li>
+					</div>
+
+					<div class="bigsize">
+						<li>большой</li>
+					</div>
+
+				</div>
+
+				<div class="form">
+					<p>Форма</p>
+					<div class="smallform">
+						<li>маленький</li>
+					</div>
+					<div class="middleform">
+						<li>средний</li>
+					</div>
+					<div class="bigform">
+						<li>большой</li>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/editor.js"></script>
+	<script src="js/interface.js"></script>
+</html>
