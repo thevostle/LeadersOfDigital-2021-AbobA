@@ -1,6 +1,16 @@
 @mainheight: 96vh;
 @toolbarcolor: #d2deed;
-@menucolor: #e8eff6;
+@menucolor: rgba(232, 239, 246, 0.99);
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@font-face {
+	font-family: 'RostelecomBasis';
+	font-style: normal;
+  	font-weight: 400;
+  	font-display: swap;
+	src: url("../fonts/Windows/._RostelecomBasis-Medium.otf") format("opentype");
+  }
 
 html,
 body {
@@ -8,12 +18,15 @@ body {
 	padding: 0;
 	overflow: hidden;
 
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'RostelecomBasis';
+	/*font-family: 'Lato', sans-serif;*/
+
 	color: #107eff;
 }
 
 * {
 	box-sizing: border-box;
+	user-select: none;
 	margin: 0px;
 	padding: 0px;
 }
@@ -27,10 +40,11 @@ header {
 	background: @toolbarcolor;
 }
 
+
 #main {
 	display: flex;
 	flex-flow: row;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 
 	height: @mainheight;
@@ -46,23 +60,91 @@ header {
 	width: 100px;
 	position: relative;
 
+	margin-right: 40px;
+
 	background: @toolbarcolor;
 }
 
-#elements {
+#elements, #templates {
 	height: @mainheight;
 
 	top: 0px;
 	left: 100px;
 
 	z-index: 1;
+}
 
-	li {
+#templates {
+	#templates-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		padding: 16px;
+	}
+	
+	img {
+		width: 169px;
+		height: 100px;
+		margin: 20px 20px 20px 20px;
+	}
+
+	input {
+		height: 50px;
+		width: 370px;
+		color: grey;
+		border-radius: 5px;
+		border-width:0px;
+		border:none;
+		margin: 40px 20px 0px 40px;
+		padding-left: 50px;
+	}
+}
+
+#elements {
+	& > li {
 		padding: 16px;
 		margin: 16px;
 		border-radius: 4px;
 
-		background-color: rgba(255, 255, 255, 0.4);
+		position: relative;
+
+		cursor: pointer;
+		background: #F1F5FA;
+
+		filter: drop-shadow(0px 2px 40px rgba(0, 0, 0, 0.25));
+
+		&::after {
+			display: block;
+			width: 32px;
+			height: 32px;
+			border-radius: 16px;
+
+			position: absolute;
+			top: 9px;
+			right: 4px;
+
+			background: #ffffff;
+			background-image: url(../icons/arrow.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 15px 11px;
+			content: "";
+		}
+	}
+	
+	li ul {
+		margin-top: 32px;
+		border-radius: 0 0 4px 4px;
+	}
+
+	li ul li {
+		padding: 16px;
+		padding-left: 32px;
+		margin: -16px;
+		border-radius: 0 0 4px 4px;
+		
+		color: #405F84;
+		background: rgb(255, 255, 255);
 	}
 }
 
@@ -73,11 +155,11 @@ header {
 	right: 0px;
 }
 
-#props, #elements {
+#props, #elements, #templates {
 	width: 450px;
 	position: absolute;
 
-	background-color: @menucolor;
+	background: @menucolor;
 
 	display: none;
 }
@@ -92,38 +174,31 @@ header {
 	align-items: center;
 
 	cursor: pointer;
-	user-select: none;
+	background: rgba(232, 239, 246, 0.01);
 
 	&:hover {
-		background-color: @menucolor;
+		background: @menucolor !important;
 	}
 
 	img {
 		width: 25px;
 		height: 25px;
 	}
+
+	& + ul:hover {
+		background: @menucolor;
+	}
 }
 
 #cell {
-	width: 75vw;
-	height: 75vh;
+	width: 85vw;
+	height: 85vh;
 	border: 1px solid black;
 	position: relative;
 
 	background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px),
 		linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
 	background-size: 25px 25px;
-
-	#slider-grid-size {
-		padding: 4px;
-		border-radius: 4px;
-
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-
-		background: @menucolor;
-	}
 }
 
 .wrapper-elements {
@@ -132,6 +207,5 @@ header {
 	padding: 16px;
 	border-radius: 4px;
 
-	background-color: white;
+	background: white;
 }
-
