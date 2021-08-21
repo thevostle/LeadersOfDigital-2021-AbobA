@@ -27,4 +27,4 @@ function movebg() {
 }
 
 var ranger = document.getElementById("changer");
-ranger.addEventListener("change", movebg, false);
+ranger.addEventListener("input", movebg, false);
