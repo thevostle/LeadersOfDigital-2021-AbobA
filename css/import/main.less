@@ -14,6 +14,14 @@
 	src: url("../node_modules/rtk-fonts/fonts/RostelecomBasis-Bold.ttf") format("opentype");
   }
 
+  @font-face {
+	font-family: 'RostelecomBasis';
+	font-style: normal;
+  	font-weight: 200;
+  	font-display: swap;
+	src: url("../node_modules/rtk-fonts/fonts/RostelecomBasis-Light.ttf") format("opentype");
+  }
+
 html,
 body {
 	margin: 0;
@@ -43,4 +51,9 @@ ul {
 
 .active {
 	background-color: @secondarycolor !important;
+}
+
+.grid {
+	background-color: rgba(255, 130, 130, 0.5);
+	position: absolute;
 }

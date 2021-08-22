@@ -40,6 +40,13 @@
   font-display: swap;
   src: url("../node_modules/rtk-fonts/fonts/RostelecomBasis-Bold.ttf") format("opentype");
 }
+@font-face {
+  font-family: 'RostelecomBasis';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../node_modules/rtk-fonts/fonts/RostelecomBasis-Light.ttf") format("opentype");
+}
 html,
 body {
   margin: 0;
@@ -63,6 +70,10 @@ ul {
 }
 .active {
   background-color: #e8eff6 !important;
+}
+.grid {
+  background-color: rgba(255, 130, 130, 0.5);
+  position: absolute;
 }
 .btn,
 .fnbtn,
@@ -108,134 +119,86 @@ ul {
   padding: 16px;
   background: #e8eff6;
 }
-.view {
-  left: 70.56%;
-  right: 1.81%;
-  top: 9.86%;
-  bottom: 77.44%;
-  background: #FFFFFF66;
-  height: 130px;
-  width: 398px;
-  left: 1016px;
-  top: 101px;
-  border-radius: 5px;
-  z-index: 3;
-  margin: 8px;
-}
-.color {
-  left: 70.56%;
-  right: 1.81%;
-  top: 9.86%;
-  bottom: 77.44%;
-  background: #FFFFFF 40%;
-  height: 100px;
-  width: 398px;
-  left: 1016px;
-  top: 101px;
-  border-radius: 5px;
-  z-index: 3;
-  margin: 8px;
-  display: flex;
-  flex-flow: column;
-}
 .circlesbox {
   display: flex;
   flex-flow: row;
   height: 35px;
-  width: 186px;
-  padding-left: 20px;
+  margin-right: 190px;
+  margin-bottom: 30px;
+}
+.circlecolorgreen,
+.circlecolorpurple,
+.circlecolorblue,
+.circlecolorred {
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+  margin: 3px;
 }
 .circlecolorred {
-  left: 10%;
-  top: 6.86%;
-  height: 35px;
-  width: 35px;
-  border-radius: 50px;
-  margin: 3px;
   background: #FF4F12;
 }
-.circlecolorgreen {
-  height: 35px;
-  width: 35px;
-  left: 13.07%;
-  top: -20.14%;
-  margin: 3px;
-  border-radius: 50px;
+.circlecolorpurple {
   background: #7700FF;
 }
-.circlecolorpurple {
-  height: 35px;
-  width: 35px;
-  left: 24.07%;
-  top: -47.14%;
-  margin: 3px;
-  border-radius: 50px;
+.circlecolorblue {
   background: #2F9AFF;
 }
-.circlecolorblue {
-  height: 35px;
-  width: 35px;
-  left: 24.07%;
-  top: -47.14%;
-  margin: 3px;
-  border-radius: 50px;
+.circlecolorgreen {
   background: #29CCA3;
 }
 .heading {
   display: inline-block;
-  width: 290px;
+  width: 384px;
   height: 30px;
   margin-top: 10px;
   margin-left: 10px;
 }
-.size {
-  left: 70.56%;
-  top: 23.73%;
+.size,
+.form,
+.view,
+.color {
   background: #FFFFFF 40%;
   height: 100px;
   width: 398px;
-  left: 1016px;
-  top: 101px;
+  justify-content: space-around;
   border-radius: 5px;
   z-index: 3;
   margin: 8px;
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
 }
-.smallsize {
-  position: absolute;
+.view .changeview {
+  display: inline-block;
+  width: 381px;
+  height: 25px;
+  padding: 4px;
+}
+.smallsize,
+.middlesize,
+.bigsize,
+.smallform,
+.middleform,
+.bigform,
+.left,
+.right {
   width: 90px;
   height: 25px;
-  left: 1030px;
-  top: 408px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 11px;
-  line-height: 13px;
-  display: flex;
-  align-items: center;
+  padding: 4px;
   text-align: center;
-  color: #405F84;
-}
-.middlesize {
-  position: absolute;
-  width: 90px;
-  height: 25px;
-  left: 1128px;
-  top: 408px;
-  background: #405F84;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-}
-.bigsize {
-  position: absolute;
-  width: 90px;
-  height: 25px;
-  left: 1226px;
-  top: 408px;
+  font-family: 'RostelecomBasis';
+  font-weight: lighter;
+  font-display: swap;
   background: #E4EDF8;
+  filter: drop-shadow(0.5px 2px 0.5px rgba(0, 0, 0, 0.3));
   border-radius: 10px;
+}
+.orientation {
+  display: flex;
+  flex-flow: column;
+  width: 169px;
+  height: 25px;
+  padding: 4px;
 }
 #workspace {
   width: 80vw;
@@ -249,8 +212,13 @@ ul {
   height: 80vh;
   border: 1px solid black;
   position: relative;
-  background: linear-gradient(rgba(255, 0, 0, 0.4), transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.4), transparent 1px);
   background-size: 25px 25px;
+}
+#view-selector {
+  height: 140px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 #device-selector {
   width: 300px;
